@@ -1,0 +1,16 @@
+pragma circom 2.0.3; // specify circom compiler version
+
+template Multiplier2(){ // define the template which generates the multiplication circuit
+   signal input in1; // declares input signal with identifier in1
+   signal input in2; // declares input signal with identifier in2
+   signal output out; // declares output signal with identifier out
+   out <== in1 * in2; // compute the multiplication of signals in1 and in2 and assigns the result to the out signal
+   log(out); // prints result of output to the standard error stream
+}
+
+component main {public [in1,in2]} = Multiplier2();
+
+/* INPUT = {
+    "in1": "1",
+    "in2": "77"
+} */
